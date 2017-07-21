@@ -1,0 +1,68 @@
+
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-styles/default-theme.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-behaviors/iron-button-state.html">
+<link rel="import" href="../iron-behaviors/iron-control-state.html">
+
+<dom-module id="hrlink-button">
+   <template>
+    <style>
+      :host {
+        @apply --layout-horizontal;
+        @apply --layout-center-center;
+        height: 2.5em;
+      }
+      :host([pressed]) {
+        color: var(--dark-primary-color);
+      }
+      :host(:not([disabled])) {
+        cursor: pointer;
+      }
+      :host([primary]) {
+        border-radius: 2px;
+        transition: background-color .4s;
+        color: var(--dark-theme-text-color);
+        background-color: var(--dark-primary-color);
+      }
+      :host([primary][pressed]) {
+        background-color: var(--primary-color);
+      }
+      :host([outline]) {
+        border-radius: 2px;
+        transition: color .4s, background-color .4s;
+        color: var(--dark-theme-text-color);
+        color: var(--dark-primary-color);
+        box-shadow: 0 0 0 1px var(--dark-primary-color);
+      }
+      :host([outline][pressed]) {
+        color: var(--dark-theme-text-color);
+        background-color: var(--dark-primary-color);
+      }
+    </style>
+    <div>[[text]]</div>
+  </template>
+
+  <script>
+    /**
+     * `hrlink-button`
+     * A button element
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class HrlinkButton extends Polymer.mixinBehaviors([Polymer.IronControlState, Polymer.IronButtonState], Polymer.Element) {
+      static get is() { return 'hrlink-button'; }
+      static get properties() {
+        return {
+          text: {
+            type: String
+          }
+        };
+      }
+    }
+
+    window.customElements.define(HrlinkButton.is, HrlinkButton);
+  </script>
+</dom-module>

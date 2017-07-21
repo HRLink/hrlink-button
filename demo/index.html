@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>hrlink-button demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../hrlink-button.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        hrlink-button {
+          margin-top: 1em;
+        }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic hrlink-button demo</h3>
+      <demo-snippet>
+        <template>
+          <hrlink-button text="Default Button"></hrlink-button>
+          <hrlink-button primary text="Primary Button"></hrlink-button>
+          <hrlink-button outline text="Outline Button"></hrlink-button>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
